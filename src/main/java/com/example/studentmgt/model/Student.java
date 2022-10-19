@@ -1,14 +1,13 @@
 package com.example.studentmgt.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name="students")
 public class Student {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long studentId;
     private String firstName;
     private String middleName;
@@ -28,6 +27,9 @@ public class Student {
         this.cgpa = cgpa;
         this.dateOfEnrollment = dateOfEnrollment;
     }
+
+//    public Student(Object o, String s, String anna, String lynn, String smith, double v, LocalDate of) {
+//    }
 
     public Long getStudentId() {
         return studentId;
